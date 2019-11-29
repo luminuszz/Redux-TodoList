@@ -1,17 +1,9 @@
-import { matcherHint } from "jest-matcher-utils";
-
-const INNITAL_STATE = [
-  {
-    id: Math.random(),
-    text: "dasd",
-    context: "dasd"
-  }
-];
+const INNITAL_STATE = [];
 
 export default function todos(state = INNITAL_STATE, action) {
   switch (action.type) {
-    case "ADD_TODO":
-      return [...state, { id: Math.random(), text: action.payload.text }];
+    case "ADD_TODO_SUCCESS":
+      return [...state, action.payload.data];
       break;
 
     case "REMOVE_TODO":

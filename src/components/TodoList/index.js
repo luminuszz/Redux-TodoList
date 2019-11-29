@@ -12,7 +12,9 @@ const TodoList = () => {
   function addTodo(e) {
     e.preventDefault();
 
-    dispatch(actionFunction.addTodo(input));
+    dispatch(actionFunction.addTodoRequest(input));
+
+    console.log(array);
   }
 
   function removeTodo(id) {
@@ -35,20 +37,7 @@ const TodoList = () => {
         <button type="submit">Enviar todo</button>
       </form>
 
-      <List>
-        {array.map(dados => (
-          <li key={dados.id}>
-            {dados.text}{" "}
-            <button
-              onClick={() => {
-                removeTodo(dados.id);
-              }}
-            >
-              Remover todo
-            </button>
-          </li>
-        ))}
-      </List>
+      <List></List>
     </Container>
   );
 

@@ -1,7 +1,14 @@
-export function addTodo(text) {
+export function addTodoRequest(text) {
   return {
-    type: "ADD_TODO",
+    type: "ADD_TODO_REQUEST",
     payload: { text }
+  };
+}
+
+export function addTodosSuccess(data) {
+  return {
+    type: "ADD_TODO_SUCCESS",
+    payload: { data }
   };
 }
 
